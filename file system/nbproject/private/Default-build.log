@@ -1,0 +1,12 @@
+gcc -c -g -Wall -std=gnu99 `pkg-config fuse --cflags --libs` disk_emu.c -o disk_emu.o
+/bin/sh: pkg-config: command not found
+gcc -c -g -Wall -std=gnu99 `pkg-config fuse --cflags --libs` sfs_api.c -o sfs_api.o
+/bin/sh: pkg-config: command not found
+gcc -c -g -Wall -std=gnu99 `pkg-config fuse --cflags --libs` fuse_wrappers.c -o fuse_wrappers.o
+/bin/sh: pkg-config: command not found
+fuse_wrappers.c:3:18: fatal error: fuse.h: No such file or directory
+ #include <fuse.h>
+                  ^
+compilation terminated.
+Makefile:21: recipe for target 'fuse_wrappers.o' failed
+make: *** [fuse_wrappers.o] Error 1
